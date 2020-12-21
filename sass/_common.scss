@@ -1,0 +1,284 @@
+/* common styles start */
+
+@import "colors";
+@import "mixins";
+@import "mediaqueries";
+.page-wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.full-width {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.restrict-width {
+    max-width: 1366px;
+    margin: 0 auto;
+}
+
+.medium-width {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.main-wrapper {
+    position: relative;
+    background: white;
+    // margin-top: -137px;
+    // @include layout(1439) {
+    //     margin-top: -120px;
+    // }
+    // @include layout(1023) {
+    //     margin-top: -92px;
+    // }
+    // @include layout(767) {
+    //     margin-top: -74px;
+    // }
+}
+
+.ios-wrapper {
+    margin-top: -137px;
+    @include layout(1439) {
+        margin-top: -120px;
+    }
+    @include layout(1023) {
+        margin-top: -92px;
+    }
+    @include layout(767) {
+        margin-top: -74px;
+    }
+}
+
+.padding-lr {
+    padding: 0 40px;
+    @include layout(1199) {
+        padding: 0 30px;
+    }
+    @include layout(1023) {
+        padding: 0 20px;
+    }
+}
+
+.mr-left-0 {
+    margin-left: 0 !important;
+}
+
+.mr-right-0 {
+    margin-right: 0 !important;
+}
+
+.pad-left-0 {
+    padding-left: 0 !important;
+}
+
+.pad-right-0 {
+    padding-right: 0 !important;
+}
+
+.verticalM {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.verticalT {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.my-show {
+    display: flex;
+}
+
+.m-d-hide {
+    display: block !important;
+    opacity: 1;
+    @include layout(767) {
+        display: none !important;
+        opacity: 0;
+    }
+}
+
+.m-d-show {
+    display: none !important;
+    opacity: 0;
+    @include layout(767) {
+        display: block !important;
+        opacity: 1;
+    }
+}
+
+.m-hide {
+    display: flex !important;
+    opacity: 1;
+    @include layout(767) {
+        display: none !important;
+        opacity: 0;
+    }
+}
+
+.m-show {
+    display: none !important;
+    opacity: 0;
+    @include layout(767) {
+        display: flex !important;
+        opacity: 1;
+    }
+}
+
+.mob-show {
+    display: none;
+    opacity: 0;
+    @include layout(767) {
+        display: flex !important;
+        opacity: 1;
+    }
+}
+
+.verticalB {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.d-show {
+    display: flex !important;
+}
+
+.d-hide {
+    display: none !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: inline-block !important;
+}
+
+.v-hidden {
+    visibility: hidden !important;
+}
+
+.v-show {
+    visibility: visibility !important;
+}
+
+button {
+    outline: none;
+    border: none;
+    font-family: inherit;
+    line-height: 1;
+    cursor: pointer;
+    appearance: none;
+}
+
+.buttons-block {
+    display: flex;
+}
+
+.btn-fill {
+    color: #fff;
+    font-size: $fs;
+    background-color: #71afe0;
+    padding: 12px 35px;
+    border-radius: 4px;
+}
+
+.btn-text {
+    color: #71afe0;
+    font-size: 14px;
+    background-color: transparent;
+    margin-left: 20px;
+}
+
+
+/* custom checkbox styles start */
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 15px;
+}
+
+.checkbox-block {
+    margin-bottom: 20px;
+    width: 250px;
+    span {
+        display: inherit;
+        padding-left: 26px;
+        color: #929ba5;
+        font-size: $fs - 2;
+    }
+}
+
+.checkbox-label {
+    color: #504b4a;
+    font-size: 16px;
+}
+
+input[type="checkbox"] {
+    width: inherit;
+}
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="checkbox"]:not(:checked)+label,
+[type="checkbox"]:checked+label {
+    position: relative;
+    padding-left: 1.6em;
+    cursor: pointer;
+    line-height: 14px;
+}
+
+
+/* checkbox aspect */
+
+[type="checkbox"]:not(:checked)+label:before,
+[type="checkbox"]:checked+label:before {
+    content: url("../images/checkbox-1.svg");
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 14px;
+}
+
+
+/* checked mark aspect */
+
+[type="checkbox"]:not(:checked)+label:after,
+[type="checkbox"]:checked+label:after {
+    content: url("../images/checkbox-2.svg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    transition: all 0.2s;
+}
+
+
+/* checked mark aspect changes */
+
+[type="checkbox"]:not(:checked)+label:after {
+    opacity: 0;
+    transform: scale(0);
+}
+
+[type="checkbox"]:checked+label:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* custom checkbox styles end */
+
+
+/* common styles end */

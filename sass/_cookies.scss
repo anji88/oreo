@@ -1,0 +1,308 @@
+.main-container {
+    max-width: 10000px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100vh;
+    background-image: url("../images/assets/bgimg.png");
+    background-size: cover;
+    position: relative;
+}
+
+.dots-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: transparent;
+    background-image: radial-gradient(#fff 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.website__ {
+    &content-section {
+        position: relative;
+        z-index: 3;
+        padding: 40px;
+        min-height: inherit;
+    }
+    &logo {
+        width: 150px;
+    }
+    &cookie-animation {
+        &.cookie1 {
+            position: absolute;
+            top: 50%;
+            left: 0%;
+            display: none;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            &.active {
+                display: block;
+                animation: left 3s ease-in;
+                left: 50%;
+            }
+            &.remove-cookie-animaion {
+                animation: middleRight 4s ease-in !important;
+                left: 120%;
+            }
+        }
+        &.cookie2 {
+            position: absolute;
+            top: 10%;
+            left: -10%;
+            transform: translate(-45%, 30%);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            &.active {
+                animation: left10 7s ease-in;
+            }
+        }
+        &.cookie3 {
+            position: absolute;
+            bottom: -30%;
+            right: 0%;
+            transform: translate(35%, 20%);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            &.active {
+                animation: rightBottom 7s ease-in;
+                animation-delay: .4s;
+            }
+        }
+        &.cookie4 {
+            position: absolute;
+            top: 0%;
+            right: 0%;
+            transform: translate(40%, -125%);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            &.active {
+                animation: topRight 7s ease-in;
+                animation-delay: .7s;
+            }
+        }
+        &::after,
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            border: 50%;
+            border: 1px solid #fff;
+            left: -150px;
+            right: -150px;
+            top: -150px;
+            bottom: -150px;
+            border-radius: 50%;
+            opacity: 0;
+            animation: puls 4s linear infinite;
+            animation-delay: 2s;
+            backface-visibility: hidden;
+        }
+        &::before {
+            animation: puls1 4s linear infinite;
+            animation-delay: 0.5s;
+            left: -150px;
+            right: -150px;
+            top: -150px;
+            bottom: -150px;
+        }
+    }
+    &cookie-logo {
+        width: 150px;
+        height: 150px;
+        animation: roate360 10s linear infinite;
+    }
+}
+
+.cookies-block {
+    &.hide {
+        display: none;
+    }
+}
+
+.cookies__button {
+    text-align: center;
+    padding: 10px 50px;
+    max-width: 350px;
+    color: #fff;
+    background: rgba(17, 217, 231, 0.479);
+    font-size: 30px;
+    cursor: pointer;
+    margin: 10px auto;
+    border-radius: 30px;
+}
+
+.thank__section {
+    display: none;
+    &.hide {
+        display: none;
+    }
+    &.show {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .network__img {
+        width: 35%;
+        margin: 0 auto;
+    }
+    .cookie__title {
+        display: block;
+        position: initial;
+    }
+}
+
+.payful__block {
+    display: none;
+    &.hide {
+        display: none;
+    }
+    &.show {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.cookie__title {
+    position: absolute;
+    bottom: -50px;
+    color: #fff;
+    font-size: 30px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    width: 100%;
+    top: 0;
+    min-height: 80px;
+    text-align: center;
+    &.insidebox {
+        padding-right: 80px;
+        top: 65%;
+    }
+    .slideInLeft {
+        transform: translate3d(-100%, 0, 0);
+        opacity: 0;
+    }
+    .slideInRight {
+        transform: translate3d(100%, 0, 0);
+        opacity: 0;
+    }
+}
+
+@keyframes roate360 {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes puls {
+    0% {
+        transform: scale(0.4);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.4);
+        opacity: 0;
+        ;
+    }
+}
+
+@keyframes puls1 {
+    0% {
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.5);
+        opacity: 0;
+        ;
+    }
+}
+
+@keyframes left {
+    0% {
+        left: -10%;
+    }
+    100% {
+        left: 50%;
+    }
+}
+
+@keyframes left10 {
+    0% {
+        transform: translate(-45%, 30%);
+    }
+    50% {
+        transform: translate(20%, 30%);
+    }
+    100% {
+        transform: translate(-45%, 30%);
+    }
+}
+
+@keyframes rightBottom {
+    0% {
+        transform: translate(35%, 18%);
+    }
+    50% {
+        transform: translate(35%, -40%);
+    }
+    100% {
+        transform: translate(35%, 18%);
+    }
+}
+
+@keyframes topRight {
+    0% {
+        transform: translate(40%, -125%);
+    }
+    50% {
+        transform: translate(40%, -40%);
+    }
+    100% {
+        transform: translate(40%, -125%);
+    }
+}
+
+@keyframes middleRight {
+    0% {
+        left: 50%;
+    }
+    100% {
+        left: 110%;
+    }
+}
+
+@keyframes leftSideTextAni {
+    0% {
+        left: -10%;
+        opacity: 1;
+    }
+    100% {
+        left: 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes rightSideTextAni {
+    0% {
+        right: -10%;
+        opacity: 1;
+    }
+    100% {
+        right: 50%;
+        opacity: 1;
+    }
+}
